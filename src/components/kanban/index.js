@@ -1,9 +1,9 @@
 import mockData from "../../mockData";
-import { useState } from "react";
+import useLocalStorageState from "../../hooks/useLocalStorage";
 import "./index.scss";
 
 const Kanban = () => {
-  const [data, setData] = useState(mockData);
+  const [data, setData] = useLocalStorageState("kanban", mockData);
 
   const onDragOver = (e) => {
     e.preventDefault();
