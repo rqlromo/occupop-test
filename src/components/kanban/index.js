@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import mockData from "../../mockData";
 import useLocalStorageState from "../../hooks/useLocalStorage";
 import "./index.scss";
+import Header from "../Header";
 import CardPreview from "../CardPreview";
 
 const Kanban = () => {
@@ -66,13 +67,7 @@ const Kanban = () => {
 
   return (
     <div className="kanban">
-      <header className="kanban__header">
-        <h1>Kanban</h1>
-        <div>
-          <input type="text" ref={inputRef} />
-          <button onClick={addColumn}>Add column</button>
-        </div>
-      </header>
+      <Header inputRef={inputRef} addColumn={addColumn} />
       <main className="kanban__main">
         {Object.values(data).map(({ id: columnId, column, candidates }) => {
           return (
