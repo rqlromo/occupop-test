@@ -1,11 +1,13 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import mockData from "../../mockData";
 import useLocalStorageState from "../../hooks/useLocalStorage";
 import "./index.scss";
+import CardPreview from "../CardPreview";
 
 const Kanban = () => {
   const inputRef = useRef();
   const [data, setData] = useLocalStorageState("kanban", mockData);
+  const [cardPreviewInfo, setCardPreviewInfo] = useState(null);
 
   const onDragOver = (e) => {
     e.preventDefault();
@@ -54,6 +56,14 @@ const Kanban = () => {
     });
   }
 
+  function showCardPreview(columnId, candidate) {
+    setCardPreviewInfo(candidate);
+  }
+
+  function hideCardPreview() {
+    setCardPreviewInfo(null);
+  }
+
   return (
     <div className="kanban">
       <header className="kanban__header">
@@ -84,6 +94,7 @@ const Kanban = () => {
                         className="kanban__card"
                         onDragStart={(e) => onDragStart(e, candidate, columnId)}
                         draggable
+                        onClick={() => showCardPreview(columnId, candidate)}
                       >
                         {name}
                       </div>
@@ -94,6 +105,12 @@ const Kanban = () => {
           );
         })}
       </main>
+      {cardPreviewInfo && (
+        <CardPreview
+          cardPreviewInfo={cardPreviewInfo}
+          hideCardPreview={hideCardPreview}
+        />
+      )}
     </div>
   );
 };
