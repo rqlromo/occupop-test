@@ -5,8 +5,10 @@ const CardPreview = ({ inputRef, addColumn }) => {
     <header className="kanban__header">
       <h1>Kanban</h1>
       <div>
-        <input type="text" ref={inputRef} />
-        <button onClick={addColumn}>Add column</button>
+        <input className="header__input" type="text" ref={inputRef} />
+        <button className="header__button" onClick={addColumn}>
+          Add column
+        </button>
       </div>
     </header>
   );

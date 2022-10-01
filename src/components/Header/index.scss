@@ -4,3 +4,28 @@
   align-items: center;
   padding: 12px 0px;
 }
+
+.header__input {
+  height: 32px;
+  width: 200px;
+  padding: 8px;
+  margin-right: 12px;
+  outline: none;
+  border-color: lightgray;
+  border-radius: 4px;
+  border: none;
+  border: 1px solid lightgray;
+
+  &:focus {
+    border: 2px solid #00bfa5;
+  }
+}
+
+.header__button {
+  height: 32px;
+  border: none;
+  background-color: #00bfa5;
+  border-radius: 4px;
+  color: white;
+  padding: 8px;
+}
