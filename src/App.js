@@ -1,7 +1,13 @@
-import "./App.css";
+import "./App.scss";
+import Kanban from "./components/kanban";
 
 function App() {
-  return <div className="App">hi</div>;
+  return (
+    <div className="app">
+      <h1>Kanban</h1>
+      <Kanban />
+    </div>
+  );
 }
 
 export default App;
