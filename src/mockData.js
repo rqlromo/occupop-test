@@ -1,9 +1,9 @@
 import { v4 as uuidv4 } from "uuid";
 
 const mockData = {
-  Application_received: {
-    id: "Application_received",
-    column: "Application received",
+  application_received: {
+    id: "application_received",
+    column: "application received",
     candidates: [
       {
         id: uuidv4(),
@@ -22,9 +22,9 @@ const mockData = {
       },
     ],
   },
-  CEO_Phone_Screen: {
-    id: "CEO_Phone_Screen",
-    column: "CEO Phone Screen",
+  CEO_phone_screen: {
+    id: "CEO_phone_screen",
+    column: "CEO phone screen",
     candidates: [
       {
         id: uuidv4(),
@@ -38,9 +38,9 @@ const mockData = {
       },
     ],
   },
-  Technical_Test: {
-    id: "Technical_Test",
-    column: "Technical Test",
+  technical_test: {
+    id: "technical_test",
+    column: "technical test",
     candidates: [
       {
         id: uuidv4(),
