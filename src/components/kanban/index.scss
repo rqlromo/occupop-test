@@ -1,6 +1,3 @@
-// color occupop
-// color: #00BFA5
-
 .kanban {
   padding: 16px;
 }
@@ -33,15 +30,10 @@
     padding: 8px 0 16px;
     text-transform: capitalize;
   }
-
-  &__content {
-  }
 }
 
 .kanban__card {
   padding: 24px;
-  // background-color: #f2f2f2;
-  // background-color: inherit;
   border: 2px solid #00bfa5;
   color: #00bfa5;
   border-radius: 8px;
