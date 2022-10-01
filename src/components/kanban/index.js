@@ -1,8 +1,10 @@
+import { useRef } from "react";
 import mockData from "../../mockData";
 import useLocalStorageState from "../../hooks/useLocalStorage";
 import "./index.scss";
 
 const Kanban = () => {
+  const inputRef = useRef();
   const [data, setData] = useLocalStorageState("kanban", mockData);
 
   const onDragOver = (e) => {
@@ -34,37 +36,64 @@ const Kanban = () => {
     setData({ ...data });
   };
 
+  function addColumn() {
+    const titleColumn = inputRef.current.value;
+    const lowerTitleColumn = titleColumn.toLowerCase().split(" ").join("_");
+
+    const newColum = {
+      [lowerTitleColumn]: {
+        id: lowerTitleColumn,
+        column: titleColumn,
+        candidates: [],
+      },
+    };
+
+    setData({
+      ...data,
+      ...newColum,
+    });
+  }
+
   return (
     <div className="kanban">
-      {Object.values(data).map(({ id: columnId, column, candidates }) => {
-        return (
-          <div
-            key={columnId}
-            className="kanban__column"
-            onDragOver={(e) => onDragOver(e)}
-            onDrop={(e) => onDrop(e, columnId)}
-          >
-            <p className="column__title">{column}</p>
-            <div className="column__content">
-              {candidates &&
-                candidates.map((candidate) => {
-                  const { id: candidateId, name } = candidate;
+      <header className="kanban__header">
+        <h1>Kanban</h1>
+        <div>
+          <input type="text" ref={inputRef} />
+          <button onClick={addColumn}>Add column</button>
+        </div>
+      </header>
+      <main className="kanban__main">
+        {Object.values(data).map(({ id: columnId, column, candidates }) => {
+          return (
+            <div
+              key={columnId}
+              className="kanban__column"
+              onDragOver={(e) => onDragOver(e)}
+              onDrop={(e) => onDrop(e, columnId)}
+            >
+              <p className="column__title">{column}</p>
+              <div className="column__content">
+                {candidates &&
+                  candidates.map((candidate) => {
+                    const { id: candidateId, name } = candidate;
 
-                  return (
-                    <div
-                      key={candidateId}
-                      className="kanban__card"
-                      onDragStart={(e) => onDragStart(e, candidate, columnId)}
-                      draggable
-                    >
-                      {name}
-                    </div>
-                  );
-                })}
+                    return (
+                      <div
+                        key={candidateId}
+                        className="kanban__card"
+                        onDragStart={(e) => onDragStart(e, candidate, columnId)}
+                        draggable
+                      >
+                        {name}
+                      </div>
+                    );
+                  })}
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </main>
     </div>
   );
 };
