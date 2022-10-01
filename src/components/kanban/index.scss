@@ -1,20 +1,40 @@
 .kanban {
-  padding: 16px;
+  padding: 24px;
 }
 
 .kanban__main {
+  padding-top: 24px;
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @media all and (min-width: 480px) {
+    flex-direction: row;
+  }
+
+  @media all and (min-width: 768px) {
+    padding-top: 0px;
+  }
 }
 
 .kanban__column {
-  width: calc(100% / 3);
-  margin-right: 16px;
+  width: 100%;
+  margin-right: 8px;
   padding: 10px;
   background-color: #fff;
   border-radius: 8px;
+  margin-bottom: 12px;
 
   &:last-child {
-    margin-right: 0px;
+    margin-bottom: 0px;
+  }
+
+  @media all and (min-width: 480px) {
+    width: calc(100% / 2 - 8px);
+  }
+
+  @media all and (min-width: 768px) {
+    width: calc(100% / 3 - 8px);
   }
 }
 
@@ -28,7 +48,7 @@
 }
 
 .kanban__card {
-  padding: 24px 12px;
+  padding: 24px 16px;
   border: 2px solid #00bfa5;
   color: #00bfa5;
   border-radius: 8px;
