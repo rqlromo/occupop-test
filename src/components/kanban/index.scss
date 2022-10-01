@@ -1,16 +1,28 @@
+// color occupop
+// color: #00BFA5
+
 .kanban {
+  padding: 16px;
+}
+
+.kanban__header {
   display: flex;
+  justify-content: space-between;
+}
 
-  &__column {
-    width: calc(100% / 3);
-    margin-right: 16px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 8px;
+.kanban__main {
+  display: flex;
+}
 
-    &:last-child {
-      margin-right: 0px;
-    }
+.kanban__column {
+  width: calc(100% / 3);
+  margin-right: 16px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+
+  &:last-child {
+    margin-right: 0px;
   }
 }
 
@@ -19,6 +31,7 @@
     font-size: 1.2rem;
     font-weight: 700;
     padding: 8px 0 16px;
+    text-transform: capitalize;
   }
 
   &__content {
@@ -27,7 +40,10 @@
 
 .kanban__card {
   padding: 24px;
-  background-color: #f2f2f2;
+  // background-color: #f2f2f2;
+  // background-color: inherit;
+  border: 2px solid #00bfa5;
+  color: #00bfa5;
   border-radius: 8px;
   margin-bottom: 8px;
 
