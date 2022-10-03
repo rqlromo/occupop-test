@@ -10,17 +10,17 @@ const Kanban = () => {
   const [data, setData] = useLocalStorageState("kanban", mockData);
   const [cardPreviewInfo, setCardPreviewInfo] = useState(null);
 
-  const onDragOver = (e) => {
+  function onDragOver(e) {
     e.preventDefault();
-  };
+  }
 
-  const onDragStart = (e, candidate, columnId) => {
+  function onDragStart(e, candidate, columnId) {
     const dataToTransfer = JSON.stringify({ candidate, columnId });
 
     e.dataTransfer.setData("dataToTransfer", dataToTransfer);
-  };
+  }
 
-  const onDrop = (e, columnId) => {
+  function onDrop(e, columnId) {
     let transferedData = JSON.parse(e.dataTransfer.getData("dataToTransfer"));
 
     if (transferedData.columnId === columnId) return;
@@ -37,7 +37,7 @@ const Kanban = () => {
     data[transferedData.columnId].candidates = filteredCandidates;
 
     setData({ ...data });
-  };
+  }
 
   function addColumn() {
     const titleColumn = inputRef.current.value;
