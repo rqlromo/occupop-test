@@ -96,13 +96,10 @@ const Kanban = () => {
           cardPreviewInfo={cardPreviewInfo}
           hideCardPreview={hideCardPreview}
         >
-          <div className="cardPreview__details">
-            <h2 className="cardPreview__name">{cardPreviewInfo.name}</h2>
-            <ul className="cardPreview__list">
-              <li>{cardPreviewInfo.position}</li>
-              <li>{cardPreviewInfo.skills.join(", ")}</li>
-            </ul>
-          </div>
+          <ul className="cardPreview__list">
+            <li>{cardPreviewInfo.position}</li>
+            <li>{cardPreviewInfo.skills.join(", ")}</li>
+          </ul>
         </CardPreview>
       )}
     </div>

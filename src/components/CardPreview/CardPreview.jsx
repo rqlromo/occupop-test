@@ -10,7 +10,10 @@ const CardPreview = ({ children, cardPreviewInfo, hideCardPreview }) => {
         <div className="cardPreview__image">
           <img src={image} alt={name} />
         </div>
-        {children}
+        <div className="cardPreview__details">
+          <h2 className="cardPreview__name">{cardPreviewInfo.name}</h2>
+          {children}
+        </div>
       </div>
     </>
   );
