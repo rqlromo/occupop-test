@@ -1,0 +1,18 @@
+.kanban__card {
+  padding: 24px 16px;
+  border: 2px solid #00bfa5;
+  color: #00bfa5;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  cursor: grab;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+
+  &:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+  }
+}

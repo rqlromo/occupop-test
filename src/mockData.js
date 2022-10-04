@@ -1,9 +1,9 @@
 import { v4 as uuidv4 } from "uuid";
+import { generateColumnId } from "./utils/generateColumnId";
 
 const mockData = {
-  application_received: {
-    id: "application_received",
-    column: "application received",
+  [generateColumnId("application received")]: {
+    columnTitle: "application received",
     candidates: [
       {
         id: uuidv4(),
@@ -14,7 +14,7 @@ const mockData = {
       },
       {
         id: uuidv4(),
-        name: "Jon Nieve",
+        name: "Jon Snow",
         image: "http://localhost:3000/assets/images/jon_nieve.jpg",
         position: "Backend Developer",
         skills: [".Net"],
@@ -28,9 +28,8 @@ const mockData = {
       },
     ],
   },
-  CEO_phone_screen: {
-    id: "CEO_phone_screen",
-    column: "CEO phone screen",
+  [generateColumnId("CEO phone screen")]: {
+    columnTitle: "CEO phone screen",
     candidates: [
       {
         id: uuidv4(),
@@ -48,9 +47,8 @@ const mockData = {
       },
     ],
   },
-  technical_test: {
-    id: "technical_test",
-    column: "technical test",
+  [generateColumnId("Technical test")]: {
+    columnTitle: "Technical test",
     candidates: [
       {
         id: uuidv4(),

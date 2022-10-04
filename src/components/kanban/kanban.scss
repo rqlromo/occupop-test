@@ -1,0 +1,19 @@
+.kanban {
+  padding: 24px;
+}
+
+.kanban__main {
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+  padding-bottom: 8px;
+
+  @media all and (min-width: 480px) {
+    flex-direction: row;
+  }
+
+  @media all and (min-width: 768px) {
+    padding-top: 0px;
+  }
+}
