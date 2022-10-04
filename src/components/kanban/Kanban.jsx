@@ -8,7 +8,7 @@ import AddColumnForm from "./AddColumnForm/AddColumnForm";
 import Column from "./Column/Column";
 import Card from "../shared/Card/Card";
 import { generateColumnId } from "../../utils/generateColumnId";
-import Draggable from "../shared/Card/Draggable";
+import Draggable from "./Draggable/Draggable";
 
 const Kanban = () => {
   const [data, setData] = useLocalStorageState("kanban", mockData);
