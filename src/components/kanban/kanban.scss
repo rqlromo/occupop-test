@@ -17,3 +17,11 @@
     padding-top: 0px;
   }
 }
+
+.card-wrapper {
+  margin-bottom: 8px;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+}

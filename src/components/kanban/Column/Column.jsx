@@ -12,7 +12,7 @@ const Column = ({ onDrop, columnTitle, children }) => {
       onDrop={onDrop}
     >
       <h1 className="column__title">{columnTitle}</h1>
-      <div className="column__content">{children}</div>
+      <div>{children}</div>
     </div>
   );
 };

@@ -20,12 +20,4 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-
-  &__content .card {
-    margin-bottom: 8px;
-
-    &:last-child {
-      margin-bottom: 0px;
-    }
-  }
 }
