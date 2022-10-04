@@ -69,9 +69,8 @@ const Kanban = () => {
               return (
                 <Column
                   key={columnId}
-                  columnId={columnId}
                   columnTitle={columnTitle}
-                  onDrop={onDrop}
+                  onDrop={(e) => onDrop(e, columnId)}
                 >
                   {candidates &&
                     candidates.map((candidate) => {
