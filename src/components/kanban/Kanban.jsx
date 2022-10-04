@@ -83,15 +83,7 @@ const Kanban = () => {
                           onClick={() => handleCandidateClick(candidate)}
                         >
                           <Draggable info={{ candidate, columnId }}>
-                            <Card
-                              key={candidateId}
-                              candidate={candidate}
-                              columnId={columnId}
-                              draggableData={{ candidate, columnId }}
-                              handleCandidateClick={handleCandidateClick}
-                            >
-                              {candidate.name}
-                            </Card>
+                            <Card key={candidateId}>{candidate.name}</Card>
                           </Draggable>
                         </div>
                       );
