@@ -7,13 +7,6 @@ const mockData = {
     candidates: [
       {
         id: uuidv4(),
-        name: "Ada Lovelace",
-        image: "http://localhost:3000/assets/images/ada_lovelace.jpg",
-        position: "Frontend Developer",
-        skills: ["HTML", "CSS"],
-      },
-      {
-        id: uuidv4(),
         name: "Jon Snow",
         image: "http://localhost:3000/assets/images/jon_nieve.jpg",
         position: "Backend Developer",
@@ -49,6 +42,18 @@ const mockData = {
   },
   [generateColumnId("Technical test")]: {
     columnTitle: "Technical test",
+    candidates: [
+      {
+        id: uuidv4(),
+        name: "Ada Lovelace",
+        image: "http://localhost:3000/assets/images/ada_lovelace.jpg",
+        position: "Frontend Developer",
+        skills: ["HTML", "CSS"],
+      },
+    ],
+  },
+  [generateColumnId("Offer")]: {
+    columnTitle: "Offer",
     candidates: [
       {
         id: uuidv4(),
