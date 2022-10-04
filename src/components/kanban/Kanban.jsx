@@ -75,15 +75,13 @@ const Kanban = () => {
                 >
                   {candidates &&
                     candidates.map((candidate) => {
-                      const { id: candidateId } = candidate;
-
                       return (
                         <div
                           className="card-wrapper"
                           onClick={() => handleCandidateClick(candidate)}
                         >
                           <Draggable info={{ candidate, columnId }}>
-                            <Card key={candidateId}>{candidate.name}</Card>
+                            <Card key={candidate.id}>{candidate.name}</Card>
                           </Draggable>
                         </div>
                       );
