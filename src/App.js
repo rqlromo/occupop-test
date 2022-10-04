@@ -1,5 +1,5 @@
 import "./App.scss";
-import Kanban from "./components/Kanban";
+import Kanban from "./components/Kanban/Kanban";
 
 function App() {
   return <Kanban />;

@@ -1,14 +1,14 @@
 import { useState } from "react";
 import mockData from "../../mockData";
+import { generateColumnId } from "../../utils/generateColumnId";
 import useLocalStorageState from "../../hooks/useLocalStorage";
-import "./kanban.scss";
-import Header from "./Header";
+import Header from "./Header/Header";
 import CardPreview from "../shared/CardPreview";
 import AddColumnForm from "./AddColumnForm/AddColumnForm";
 import Column from "./Column/Column";
 import Card from "../shared/Card/Card";
-import { generateColumnId } from "../../utils/generateColumnId";
 import Draggable from "./Draggable/Draggable";
+import "./kanban.scss";
 
 const Kanban = () => {
   const [data, setData] = useLocalStorageState("kanban", mockData);
