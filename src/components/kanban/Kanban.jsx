@@ -8,6 +8,7 @@ import AddColumnForm from "./AddColumnForm/AddColumnForm";
 import Column from "./Column/Column";
 import Card from "../shared/Card/Card";
 import { generateColumnId } from "../../utils/generateColumnId";
+import Draggable from "../shared/Card/Draggable";
 
 const Kanban = () => {
   const [data, setData] = useLocalStorageState("kanban", mockData);
@@ -77,12 +78,15 @@ const Kanban = () => {
                       const { id: candidateId } = candidate;
 
                       return (
-                        <Card
-                          key={candidateId}
-                          candidate={candidate}
-                          columnId={columnId}
-                          handleCandidateClick={handleCandidateClick}
-                        />
+                        <Draggable info={{ candidate, columnId }}>
+                          <Card
+                            key={candidateId}
+                            candidate={candidate}
+                            columnId={columnId}
+                            draggableData={{ candidate, columnId }}
+                            handleCandidateClick={handleCandidateClick}
+                          />
+                        </Draggable>
                       );
                     })}
                 </Column>
