@@ -52,8 +52,8 @@ const mockData = {
       },
     ],
   },
-  [generateColumnId("Offer")]: {
-    columnTitle: "Offer",
+  [generateColumnId("Candidate offer accepted")]: {
+    columnTitle: "Candidate offer accepted",
     candidates: [
       {
         id: uuidv4(),
