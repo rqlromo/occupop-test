@@ -1,36 +1,28 @@
 import "./column.scss";
 
-const Column = ({
-  data,
-  setData,
-  columnId,
-  columnTitle,
-  candidates,
-  handleCandidateClick,
-  children,
-}) => {
+const Column = ({ onDrop, columnId, columnTitle, children }) => {
   const onDragOver = (e) => {
     e.preventDefault();
   };
 
-  const onDrop = (e, columnId) => {
-    let transferedData = JSON.parse(e.dataTransfer.getData("dataToTransfer"));
+  // const onDrop = (e, columnId) => {
+  //   let transferedData = JSON.parse(e.dataTransfer.getData("dataToTransfer"));
 
-    if (transferedData.columnId === columnId) return;
+  //   if (transferedData.columnId === columnId) return;
 
-    data[columnId].candidates = [
-      ...data[columnId].candidates,
-      transferedData.candidate,
-    ];
+  //   data[columnId].candidates = [
+  //     ...data[columnId].candidates,
+  //     transferedData.candidate,
+  //   ];
 
-    const filteredCandidates = data[transferedData.columnId].candidates.filter(
-      (candidate) => candidate.id !== transferedData.candidate.id
-    );
+  //   const filteredCandidates = data[transferedData.columnId].candidates.filter(
+  //     (candidate) => candidate.id !== transferedData.candidate.id
+  //   );
 
-    data[transferedData.columnId].candidates = filteredCandidates;
+  //   data[transferedData.columnId].candidates = filteredCandidates;
 
-    setData({ ...data });
-  };
+  //   return { ...data };
+  // };
 
   return (
     <div

@@ -38,6 +38,25 @@ const Kanban = () => {
     setShouldShowCardPreview(true);
   }
 
+  const onDrop = (e, columnId) => {
+    let transferedData = JSON.parse(e.dataTransfer.getData("dataToTransfer"));
+
+    if (transferedData.columnId === columnId) return;
+
+    data[columnId].candidates = [
+      ...data[columnId].candidates,
+      transferedData.candidate,
+    ];
+
+    const filteredCandidates = data[transferedData.columnId].candidates.filter(
+      (candidate) => candidate.id !== transferedData.candidate.id
+    );
+
+    data[transferedData.columnId].candidates = filteredCandidates;
+
+    setData({ ...data });
+  };
+
   return (
     <div className="kanban">
       <Header>
@@ -50,12 +69,9 @@ const Kanban = () => {
               return (
                 <Column
                   key={columnId}
-                  data={data}
-                  setData={setData}
                   columnId={columnId}
                   columnTitle={columnTitle}
-                  candidates={candidates}
-                  handleCandidateClick={handleCandidateClick}
+                  onDrop={onDrop}
                 >
                   {candidates &&
                     candidates.map((candidate) => {
