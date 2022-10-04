@@ -3,7 +3,7 @@ import mockData from "../../mockData";
 import useLocalStorageState from "../../hooks/useLocalStorage";
 import "./kanban.scss";
 import Header from "./Header";
-import CardPreview from "../CardPreview";
+import CardPreview from "../shared/CardPreview";
 import AddColumnForm from "./AddColumnForm/AddColumnForm";
 import Column from "./Column/Column";
 import Card from "../shared/Card/Card";
