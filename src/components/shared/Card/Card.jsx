@@ -1,16 +1,7 @@
 import "./card.scss";
 
-const Card = ({ candidate, handleCandidateClick, className = "" }) => {
-  const { name } = candidate;
-
-  return (
-    <div
-      className={`card ${className}`.trim()}
-      onClick={() => handleCandidateClick(candidate)}
-    >
-      {name}
-    </div>
-  );
+const Card = ({ children, className = "" }) => {
+  return <div className={`card ${className}`.trim()}>{children}</div>;
 };
 
 export default Card;

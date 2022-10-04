@@ -78,7 +78,10 @@ const Kanban = () => {
                       const { id: candidateId } = candidate;
 
                       return (
-                        <div className="card-wrapper">
+                        <div
+                          className="card-wrapper"
+                          onClick={() => handleCandidateClick(candidate)}
+                        >
                           <Draggable info={{ candidate, columnId }}>
                             <Card
                               key={candidateId}
@@ -86,7 +89,9 @@ const Kanban = () => {
                               columnId={columnId}
                               draggableData={{ candidate, columnId }}
                               handleCandidateClick={handleCandidateClick}
-                            />
+                            >
+                              {candidate.name}
+                            </Card>
                           </Draggable>
                         </div>
                       );
